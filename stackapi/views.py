@@ -1,8 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from rest_framework import viewsets
 from .models import Question
-from .serializer import QuestionSerializer
 from bs4 import BeautifulSoup
 
 import requests
@@ -12,13 +10,7 @@ import json
 
 
 def index(request):
-    return HttpResponse("Success")
-
-
-class QuestionAPI(viewsets.ModelViewSet):
-    queryset = Question.objects.all()
-    serializer_class = QuestionSerializer
-
+    return HttpResponse("Welcome to API StackOverflow ")
 
 def latest(request):
     try:
